@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_07s5cuq" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
+  <decision id="menu" name="menu">
+    <decisionTable id="DecisionTable_1t4afaq" hitPolicy="FIRST">
+      <input id="Input_1" label="prato" camunda:inputVariable="prato">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_14r4nuk" label="periodoDoDia" camunda:inputVariable="periodoDoDia">
+        <inputExpression id="LiteralExpression_01ujkhh" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1pfcylk">
+          <text>"manha","tarde","noite"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="bebida" name="bebida" typeRef="string" />
+      <rule id="DecisionRule_05peqbc">
+        <inputEntry id="UnaryTests_0chgkw8">
+          <text>"omelete"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ualt12">
+          <text>"manha"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qmhyat">
+          <text>"cafe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b6frr3">
+        <inputEntry id="UnaryTests_0wunwtv">
+          <text>"sanduiche"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wakhic">
+          <text>"tarde"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pw9502">
+          <text>"refrigerante"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a8nt4z">
+        <inputEntry id="UnaryTests_17l6onb">
+          <text>"sanduiche"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10fcffu">
+          <text>"manha"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zcle4t">
+          <text>"suco de laranja"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1myq5kh">
+        <inputEntry id="UnaryTests_1dba1kb">
+          <text>"sopa"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u69y0h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b7fyxb">
+          <text>"cha"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nes7xa">
+        <inputEntry id="UnaryTests_0j62wea">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07w46n4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vwk2eb">
+          <text>"cerveja"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1f5zgyc">
+      <dmndi:DMNShape id="DMNShape_1pfkkvt" dmnElementRef="menu">
+        <dc:Bounds height="80" width="180" x="150" y="150" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
