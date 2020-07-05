@@ -28,6 +28,7 @@ fui evoluindo os estudos.
 * [Conditional and Default Sequence Flows](https://docs.camunda.org/manual/7.12/reference/bpmn20/gateways/sequence-flow/)
 * [Timer Events](https://docs.camunda.org/manual/7.8/reference/bpmn20/events/timer-events/)
 * [Routing Events to Processes](https://camunda.com/best-practices/routing-events-to-processes/)
+* [Camunda API Message](https://docs.camunda.org/manual/7.9/reference/rest/message/)
 
 ### camunda-dmn-bpmn
 #### Videos
