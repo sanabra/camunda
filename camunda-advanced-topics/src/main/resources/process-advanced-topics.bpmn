@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0i5pc8x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
+  <bpmn:process id="camunda-advanced-topics" name="camunda-advanced-topics" isExecutable="true">
+    <bpmn:startEvent id="Event_1jivikx" />
+  </bpmn:process>
+  <bpmn:message id="Message_0f3la06" name="PerguntaCriada" />
+  <bpmn:message id="Message_01sy55u" name="TimeSabeSobrePergunta" />
+  <bpmn:message id="Message_TimeNaoSabeSobrePergunta" name="TimeNaoSabeSobrePergunta" />
+  <bpmn:message id="Message_1l51geg" name="PerguntaAlterada" />
+  <bpmn:signal id="Signal_0p12wul" name="VerificarProblemaProducao" />
+  <bpmn:message id="Message_1t52tmi" name="PerguntarAoChefe" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="camunda-advanced-topics">
+      <bpmndi:BPMNShape id="Event_1jivikx_di" bpmnElement="Event_1jivikx">
+        <dc:Bounds x="152" y="72" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

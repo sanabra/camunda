@@ -22,6 +22,7 @@
 
     <modules>
         <module>camunda-springboot</module>
+        <module>camunda-advanced-topics</module>
         <module>camunda-dmn-bpmn</module>
         <module>camunda-process-communication</module>
     </modules>
