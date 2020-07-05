@@ -13,11 +13,16 @@
     <bpmn:userTask id="Activity_144g659" name="realizar pedido">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="prato" label="Prato" type="string" />
-          <camunda:formField id="periodoDoDia" label="Periodo do Dia" type="enum">
-            <camunda:value id="manha" name="manha" />
-            <camunda:value id="tarde" name="tarde" />
-            <camunda:value id="noite" name="noite" />
+          <camunda:formField id="prato" label="Prato" type="string">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="horaAtual" label="Hora atual" type="long" defaultValue="7">
+            <camunda:validation>
+              <camunda:constraint name="min" config="0" />
+              <camunda:constraint name="max" config="23" />
+            </camunda:validation>
           </camunda:formField>
         </camunda:formData>
       </bpmn:extensionElements>
@@ -25,7 +30,7 @@
       <bpmn:outgoing>Flow_07rfmod</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1rbmyr1" sourceRef="Activity_116s23v" targetRef="Event_0czftdb" />
-    <bpmn:businessRuleTask id="Activity_1s1ae0l" name="decidir bebida" camunda:resultVariable="bebida" camunda:decisionRef="menu" camunda:mapDecisionResult="singleEntry">
+    <bpmn:businessRuleTask id="Activity_1s1ae0l" name="decidir bebida" camunda:resultVariable="bebida" camunda:decisionRef="decidirMenu" camunda:mapDecisionResult="singleEntry">
       <bpmn:incoming>Flow_07rfmod</bpmn:incoming>
       <bpmn:outgoing>Flow_0m0ggfy</bpmn:outgoing>
     </bpmn:businessRuleTask>

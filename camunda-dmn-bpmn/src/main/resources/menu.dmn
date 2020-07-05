@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_07s5cuq" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
-  <decision id="menu" name="menu">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="decisao" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
+  <decision id="decidirMenu" name="decidir o prato">
+    <informationRequirement id="InformationRequirement_097cg4t">
+      <requiredDecision href="#decidirPeriodoDoDia" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_1t4afaq" hitPolicy="FIRST">
       <input id="Input_1" label="prato" camunda:inputVariable="prato">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -9,7 +12,7 @@
       </input>
       <input id="InputClause_14r4nuk" label="periodoDoDia" camunda:inputVariable="periodoDoDia">
         <inputExpression id="LiteralExpression_01ujkhh" typeRef="string">
-          <text></text>
+          <text>periodoDoDia</text>
         </inputExpression>
         <inputValues id="UnaryTests_1pfcylk">
           <text>"manha","tarde","noite"</text>
@@ -71,13 +74,64 @@
           <text>"cerveja"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1lhpld6">
+        <inputEntry id="UnaryTests_1nme6c9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12kvzo3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ee29um">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="decidirPeriodoDoDia" name="decidir o periodo do dia">
+    <decisionTable id="DecisionTable_08xypp0" hitPolicy="FIRST">
+      <input id="InputClause_1p8nps3" label="horaAtual" camunda:inputVariable="horaAtual">
+        <inputExpression id="LiteralExpression_1et8wmv" typeRef="integer" />
+      </input>
+      <output id="OutputClause_08ewrdh" label="periodoDoDia" name="periodoDoDia" typeRef="string" />
+      <rule id="DecisionRule_09e1i42">
+        <inputEntry id="UnaryTests_122zz7y">
+          <text>[6..12]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07t8r8j">
+          <text>"manha"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w4yqq4">
+        <inputEntry id="UnaryTests_0coxxig">
+          <text>[13..18]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07x7oeb">
+          <text>"tarde"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04lgea1">
+        <inputEntry id="UnaryTests_1ng77ra">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13q2z3q">
+          <text>"noite"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_1f5zgyc">
-      <dmndi:DMNShape id="DMNShape_1pfkkvt" dmnElementRef="menu">
-        <dc:Bounds height="80" width="180" x="150" y="150" />
+      <dmndi:DMNShape id="DMNShape_1pfkkvt" dmnElementRef="decidirMenu">
+        <dc:Bounds height="80" width="180" x="160" y="80" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_05ji66g" dmnElementRef="decidirPeriodoDoDia">
+        <dc:Bounds height="80" width="180" x="160" y="220" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1pbmxpj" dmnElementRef="InformationRequirement_097cg4t">
+        <di:waypoint x="250" y="220" />
+        <di:waypoint x="250" y="180" />
+        <di:waypoint x="250" y="160" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
