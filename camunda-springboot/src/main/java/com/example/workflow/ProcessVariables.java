@@ -2,8 +2,6 @@ package com.example.workflow;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 
-import java.util.UUID;
-
 public class ProcessVariables {
 
     private static final String VARIAVEL_DATA_HORA = "dataHora";
@@ -22,7 +20,7 @@ public class ProcessVariables {
         delegate.setProcessBusinessKey(id);
     }
 
-    public String getVariavelDataHora() {
+    public String getDataHora() {
         return (String) delegate.getVariable(VARIAVEL_DATA_HORA);
     }
 

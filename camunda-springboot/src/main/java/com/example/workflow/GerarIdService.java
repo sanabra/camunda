@@ -20,13 +20,20 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.stereotype.Component;
 
-@Component("ExibirIdService")
-public class ExibirIdService implements JavaDelegate {
+import java.util.GregorianCalendar;
+import java.util.UUID;
 
-  public void execute(DelegateExecution delegate) throws Exception {
+@Component("GerarIdService")
+public class GerarIdService implements JavaDelegate {
 
-    System.out.println("ExibirIdService");
+    public void execute(DelegateExecution delegate) throws Exception {
 
-  }
+        System.out.println("GerarIdService");
+
+        String id = UUID.randomUUID().toString();
+        ProcessVariables processVariables = new ProcessVariables(delegate);
+        processVariables.setID(id);
+        processVariables.setDataHora(new GregorianCalendar().toString());
+    }
 
 }
