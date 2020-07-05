@@ -2,7 +2,7 @@
 Esse repositorio tem o proposito de testar features do Camunda
 
 ## Modulos
-Esse projeto esta subdividio em modulos e cada modulo e umm assunto diferenciado com niveis de complexidade diferenciado.
+Esse projeto esta subdividio em modulos. Cada modulo eh um assunto nivel de complexidade
 A seguir segue a sugestao de visualizacao, caso voce nao esta familiriazado com o Camunda, do mais simples ao mais complexo, ou seja, conforme fui evoluindo os estudos.
 
 ### camunda-springboot
