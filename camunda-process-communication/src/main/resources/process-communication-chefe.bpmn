@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1meuah3" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
+  <bpmn:process id="camunda-communication-chefe" name="camunda-communication-chefe" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="solicitar ajudar do chefe">
+      <bpmn:outgoing>Flow_198falg</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0gw1n2y" messageRef="Message_1x42uwc" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_198falg" sourceRef="StartEvent_1" targetRef="Activity_1ijct0p" />
+    <bpmn:userTask id="Activity_1ijct0p" name="chefe responde duvida">
+      <bpmn:incoming>Flow_198falg</bpmn:incoming>
+      <bpmn:outgoing>Flow_0h144ur</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_13k47u3">
+      <bpmn:incoming>Flow_0h144ur</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0h144ur" sourceRef="Activity_1ijct0p" targetRef="Event_13k47u3" />
+  </bpmn:process>
+  <bpmn:message id="Message_1x42uwc" name="PerguntarAoChefe" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="camunda-communication-chefe">
+      <bpmndi:BPMNEdge id="Flow_0h144ur_di" bpmnElement="Flow_0h144ur">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="432" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_198falg_di" bpmnElement="Flow_198falg">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1cld78g_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="154" y="142" width="87" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18sei3n_di" bpmnElement="Activity_1ijct0p">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_13k47u3_di" bpmnElement="Event_13k47u3">
+        <dc:Bounds x="432" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

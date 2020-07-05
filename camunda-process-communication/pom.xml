@@ -16,7 +16,7 @@
     </properties>
 
     <groupId>com.example.workflow</groupId>
-    <artifactId>camunda-dmn-bpmn</artifactId>
+    <artifactId>camunda-process-communication</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>

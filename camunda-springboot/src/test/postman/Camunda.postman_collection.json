@@ -1,228 +1,228 @@
 {
-	"info": {
-		"_postman_id": "05003a6b-30f8-40ac-936b-50f093af7905",
-		"name": "Camunda",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "start process instance",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "dae1fa3a-bb74-4493-85f4-f3c736a5def3",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "5bbe65d5-6954-48df-b23d-09cb5458ed6c",
-						"exec": [
-							"var jsonData = pm.response.json();\r",
-							"\r",
-							"pm.globals.set(\"id\", jsonData.id);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"content-length": true,
-					"host": true,
-					"user-agent": true,
-					"content-type": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Host",
-						"value": "localhost:8080",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/engine-rest/process-definition/key/camunda/start",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"engine-rest",
-						"process-definition",
-						"key",
-						"camunda",
-						"start"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "task list",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "0ca84582-264f-4dd7-aa44-5b27a2699264",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "40bbb8a5-ee8e-45ab-b9bb-9133f5159dd7",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"content-length": true,
-					"host": true,
-					"user-agent": true,
-					"content-type": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Host",
-						"value": "localhost:8080",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/engine-rest/task?processDefinitionKey=camunda",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"engine-rest",
-						"task"
-					],
-					"query": [
-						{
-							"key": "processDefinitionKey",
-							"value": "camunda"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "task complete",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "fc00523f-1139-4a70-a136-1fa11e9cf965",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "981ac851-8a87-4c51-ad0e-505b2beb8d3a",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"content-length": true,
-					"content-type": true,
-					"host": true,
-					"user-agent": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Host",
-						"type": "text",
-						"value": "localhost:8080"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"variables\": {        \r\n        \"estiloMusical\": {\r\n            \"value\": \"teste\"\r\n        }\r\n    }\r\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8080/engine-rest/task/e36d9063-b1ca-11ea-8f15-a434d95d78f1/complete",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"engine-rest",
-						"task",
-						"e36d9063-b1ca-11ea-8f15-a434d95d78f1",
-						"complete"
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"protocolProfileBehavior": {}
+  "info": {
+    "_postman_id": "05003a6b-30f8-40ac-936b-50f093af7905",
+    "name": "Camunda",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "start process instance",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "dae1fa3a-bb74-4493-85f4-f3c736a5def3",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "5bbe65d5-6954-48df-b23d-09cb5458ed6c",
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "pm.globals.set(\"id\", jsonData.id);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "accept": true,
+          "accept-encoding": true,
+          "connection": true,
+          "content-length": true,
+          "host": true,
+          "user-agent": true,
+          "content-type": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Host",
+            "value": "localhost:8080",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/engine-rest/process-definition/key/camunda/start",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "engine-rest",
+            "process-definition",
+            "key",
+            "camunda",
+            "start"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "task list",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "0ca84582-264f-4dd7-aa44-5b27a2699264",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "40bbb8a5-ee8e-45ab-b9bb-9133f5159dd7",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "accept": true,
+          "accept-encoding": true,
+          "connection": true,
+          "content-length": true,
+          "host": true,
+          "user-agent": true,
+          "content-type": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Host",
+            "value": "localhost:8080",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/engine-rest/task?processDefinitionKey=camunda",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "engine-rest",
+            "task"
+          ],
+          "query": [
+            {
+              "key": "processDefinitionKey",
+              "value": "camunda"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "task complete",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "fc00523f-1139-4a70-a136-1fa11e9cf965",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "981ac851-8a87-4c51-ad0e-505b2beb8d3a",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "accept": true,
+          "accept-encoding": true,
+          "connection": true,
+          "content-length": true,
+          "content-type": true,
+          "host": true,
+          "user-agent": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Host",
+            "type": "text",
+            "value": "localhost:8080"
+          },
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"variables\": {        \r\n        \"estiloMusical\": {\r\n            \"value\": \"teste\"\r\n        }\r\n    }\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/engine-rest/task/e36d9063-b1ca-11ea-8f15-a434d95d78f1/complete",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "engine-rest",
+            "task",
+            "e36d9063-b1ca-11ea-8f15-a434d95d78f1",
+            "complete"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
 }
