@@ -22,7 +22,7 @@ public class ProcessVariables {
         delegate.setProcessBusinessKey(id);
     }
 
-    public String getVariavelDataHora() {
+    public String getDataHora() {
         return (String) delegate.getVariable(VARIAVEL_DATA_HORA);
     }
 

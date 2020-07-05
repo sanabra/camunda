@@ -25,7 +25,9 @@ public class ExibirIdService implements JavaDelegate {
 
   public void execute(DelegateExecution delegate) throws Exception {
 
-    System.out.println("ExibirIdService");
+    ProcessVariables processVariables = new ProcessVariables(delegate);
+    System.out.println("ID " +     processVariables.getID());
+    System.out.println("Data Hora " +     processVariables.getDataHora());
 
   }
 
