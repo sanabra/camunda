@@ -1,0 +1,5 @@
+* ir em http://localhost:8080/camunda/app/tasklist
+* dar complete na task 'aguardar voo para a Europa' com businessID=14
+* dar complete na task 'aguardar voo para a Europa' com businessID=15
+* dar complete na task 'verificar o clima' com businessID=14 com clima igual 'ensolarado'
+* dar complete na task 'verificar o clima' com businessID=15 com clima diferente de 'ensolarado'
