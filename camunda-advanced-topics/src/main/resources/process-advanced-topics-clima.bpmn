@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_03wl1yu" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
+  <bpmn:process id="process-advanced-topic-clima" name="process-advanced-topic-clima" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_07t5vwa</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_07t5vwa" sourceRef="StartEvent_1" targetRef="Activity_1f0e341" />
+    <bpmn:exclusiveGateway id="Gateway_0xixljv" name="clima está ok?" default="Flow_16bm7o1">
+      <bpmn:incoming>Flow_1sq2pa5</bpmn:incoming>
+      <bpmn:outgoing>Flow_0t3momq</bpmn:outgoing>
+      <bpmn:outgoing>Flow_16bm7o1</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1sq2pa5" sourceRef="Activity_1f0e341" targetRef="Gateway_0xixljv" />
+    <bpmn:endEvent id="Event_1uutcpv">
+      <bpmn:incoming>Flow_0t3momq</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0t3momq" name="Sim" sourceRef="Gateway_0xixljv" targetRef="Event_1uutcpv">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${clima == 'ensolarado'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_16bm7o1" name="Não" sourceRef="Gateway_0xixljv" targetRef="Activity_0qwmo76" />
+    <bpmn:endEvent id="Event_0zw3yn1">
+      <bpmn:incoming>Flow_0n1ysvg</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0n1ysvg" sourceRef="Activity_0qwmo76" targetRef="Event_0zw3yn1" />
+    <bpmn:serviceTask id="Activity_0qwmo76" name="imprimir detalhe do clima" camunda:delegateExpression="${ImprimirDetalheService}">
+      <bpmn:incoming>Flow_16bm7o1</bpmn:incoming>
+      <bpmn:outgoing>Flow_0n1ysvg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_1f0e341" name="verificar o clima">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="clima" label="Clima" type="enum" defaultValue="ensolarado">
+            <camunda:value id="ensolarado" name="ensolarado" />
+            <camunda:value id="chuva" name="chuva" />
+            <camunda:value id="neve" name="neve" />
+            <camunda:value id="nublado" name="nublado" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_07t5vwa</bpmn:incoming>
+      <bpmn:outgoing>Flow_1sq2pa5</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="process-advanced-topic-clima">
+      <bpmndi:BPMNEdge id="Flow_07t5vwa_di" bpmnElement="Flow_07t5vwa">
+        <di:waypoint x="215" y="127" />
+        <di:waypoint x="270" y="127" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sq2pa5_di" bpmnElement="Flow_1sq2pa5">
+        <di:waypoint x="370" y="127" />
+        <di:waypoint x="425" y="127" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0t3momq_di" bpmnElement="Flow_0t3momq">
+        <di:waypoint x="475" y="127" />
+        <di:waypoint x="532" y="127" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="480" y="109" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16bm7o1_di" bpmnElement="Flow_16bm7o1">
+        <di:waypoint x="450" y="152" />
+        <di:waypoint x="450" y="240" />
+        <di:waypoint x="540" y="240" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="455" y="193" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0n1ysvg_di" bpmnElement="Flow_0n1ysvg">
+        <di:waypoint x="640" y="240" />
+        <di:waypoint x="712" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="109" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0xixljv_di" bpmnElement="Gateway_0xixljv" isMarkerVisible="true">
+        <dc:Bounds x="425" y="102" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="414" y="78" width="71" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1uutcpv_di" bpmnElement="Event_1uutcpv">
+        <dc:Bounds x="532" y="109" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0zw3yn1_di" bpmnElement="Event_0zw3yn1">
+        <dc:Bounds x="712" y="222" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0cqbv2k_di" bpmnElement="Activity_0qwmo76">
+        <dc:Bounds x="540" y="200" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1vtivuo_di" bpmnElement="Activity_1f0e341">
+        <dc:Bounds x="270" y="87" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

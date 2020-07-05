@@ -7,8 +7,9 @@ Esse repositorio tem o proposito de testar features do Camunda
 * [3 Camunda in a Distributed System](https://www.youtube.com/watch?v=l6pMXr8Jf6k)
 
 ## Modulos
-Esse projeto esta subdividio em modulos. Cada modulo eh um assunto nivel de complexidade
-A seguir segue a sugestao de visualizacao, caso voce nao esta familiriazado com o Camunda, do mais simples ao mais complexo, ou seja, conforme fui evoluindo os estudos.
+Esse projeto está subdividido em modulos. Cada modulo tem um nível de complexidade diferente. A seguir segue a sugestão 
+de visualização, caso voce não está familiarizado com o Camunda, do mais simples ao mais complexo, ou seja, conforme eu
+fui evoluindo os estudos.
 
 ### camunda-springboot
 #### Material recomendado para estudo
@@ -22,6 +23,11 @@ A seguir segue a sugestao de visualizacao, caso voce nao esta familiriazado com 
 #### Videos
 * [4 Camunda Rest API Tutorial](https://www.youtube.com/watch?v=ypX90aQScOQ)
 * [5 Camunda advanced topics](https://www.youtube.com/watch?v=gFY1UuiCVl4&t=166s)
+
+#### Material recomendado para estudo
+* [Conditional and Default Sequence Flows](https://docs.camunda.org/manual/7.12/reference/bpmn20/gateways/sequence-flow/)
+* [Timer Events](https://docs.camunda.org/manual/7.8/reference/bpmn20/events/timer-events/)
+* [Routing Events to Processes](https://camunda.com/best-practices/routing-events-to-processes/)
 
 ### camunda-dmn-bpmn
 #### Videos
